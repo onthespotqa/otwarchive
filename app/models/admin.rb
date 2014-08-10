@@ -3,6 +3,7 @@ class Admin < ActiveRecord::Base
   acts_as_authentic do |config|
     config.transition_from_restful_authentication = true
     config.transition_from_crypto_providers = Authlogic::CryptoProviders::Sha1
+    config.merge_validates_length_of_password_field_options({:minimum => 3, :maximum => 40})
   end
   
   has_many :log_items

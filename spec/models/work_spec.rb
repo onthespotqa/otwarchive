@@ -7,16 +7,6 @@ describe Work do
     create(:work).should be_valid
   end
 
-  context "create_stat_counter" do
-    it "creates a stat counter for that work id" do
-      expect {
-        @work = build(:work)
-        @work.save!
-      }.to change{ StatCounter.all.count }.by(1)
-      StatCounter.where(:work_id => @work.id).should exist
-    end
-  end
-
   context "invalid title" do
     it { build(:work, title: nil).should be_invalid }
 

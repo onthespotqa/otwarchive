@@ -5,12 +5,14 @@ require 'coveralls'
 Coveralls.wear_merged!('rails')
 SimpleCov.merge_timeout 3600
 
+
 require File.expand_path("../../config/environment", __FILE__)
 #require File.expand_path('../../features/support/factories.rb', __FILE__)
 require 'rspec/rails'
 require 'factory_girl'
 require 'database_cleaner'
 require 'email_spec'
+require 'shoulda-matchers'
 
 
 

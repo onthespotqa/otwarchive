@@ -24,7 +24,13 @@ FactoryGirl.define do
     end
 
     factory :published_in_past do
+      chapter_info = { content: "This is some chapter content for my work.", published_at: 5.months.ago }
+      chapter_attributes chapter_info
+    end
 
+    factory :published_in_future do
+      chapter_info = { content: "This is some chapter content for my work.", published_at: Date.today + 5.days }
+      chapter_attributes chapter_info
     end
   end
 
