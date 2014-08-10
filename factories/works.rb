@@ -2,7 +2,7 @@ require 'faker'
 FactoryGirl.define do
 
   factory :work do
-    title "My title"
+    title "My Work Title"
     fandom_string "Testing"
     rating_string "Not Rated"
     warning_string "No Archive Warnings Apply"
@@ -21,6 +21,10 @@ FactoryGirl.define do
 
     factory :custom_work_skin do
       work_skin_id 1
+    end
+
+    factory :published_in_past do
+
     end
   end
 
