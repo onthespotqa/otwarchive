@@ -32,6 +32,14 @@ FactoryGirl.define do
       chapter_info = { content: "This is some chapter content for my work.", published_at: Date.today + 5.days }
       chapter_attributes chapter_info
     end
+
+    factory :restricted_work do
+      restricted true
+    end
+
+    factory :hidden_by_admin do
+      hidden_by_admin true
+    end
   end
 
   factory :external_work do

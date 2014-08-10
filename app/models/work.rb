@@ -456,20 +456,20 @@ class Work < ActiveRecord::Base
   ########################################################################
   # VISIBILITY
   ########################################################################
-
-  def visible(current_user=User.current_user)
-    if current_user.nil? || current_user == :false
-      return self if self.posted unless self.restricted || self.hidden_by_admin
-    elsif self.posted && !self.hidden_by_admin
-      return self
-    elsif self.hidden_by_admin?
-      return self if current_user.kind_of?(Admin) || current_user.is_author_of?(self)
-    end
-  end
-
-  def visible?(user=User.current_user)
-    self.visible(user) == self
-  end
+  #
+  #def visible(current_user=User.current_user)
+  #  if current_user.nil? || current_user == :false
+  #    return self if self.posted unless self.restricted || self.hidden_by_admin
+  #  elsif self.posted && !self.hidden_by_admin
+  #    return self
+  #  elsif self.hidden_by_admin?
+  #    return self if current_user.kind_of?(Admin) || current_user.is_author_of?(self)
+  #  end
+  #end
+  #
+  #def visible?(user=User.current_user)
+  #  self.visible(user) == self
+  #end
 
   def unrestricted=(setting)
     if setting == "1"
